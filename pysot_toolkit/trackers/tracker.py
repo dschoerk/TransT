@@ -94,7 +94,9 @@ class Tracker(object):
         im_patch = im_patch[np.newaxis, :, :, :]
         im_patch = im_patch.astype(np.float32)
         im_patch = torch.from_numpy(im_patch)
-        im_patch = im_patch.cuda()
+        
+        if self.net.use_gpu:
+            im_patch = im_patch.cuda()
         return im_patch
 
 

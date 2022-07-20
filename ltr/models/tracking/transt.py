@@ -230,7 +230,7 @@ def transt_resnet50(settings):
         num_classes=num_classes
     )
     device = torch.device(settings.device)
-    model.to(device)
+    # model.to(device) 
     return model
 
 def transt_loss(settings):
